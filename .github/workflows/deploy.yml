@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -30,7 +31,7 @@ jobs:
         with:
           host: ${{ secrets.AWS_EC2_HOST }}
           username: ${{ secrets.AWS_EC2_USERNAME }}
-          password: ${{ secrets.AWS_EC2_PASSWORD }}
+          key: ${{ secrets.AWS_EC2_PASSWORD }}
           script: |
             docker pull your-ecr-repository-url:latest
             docker run -d -p 8000:8000 your-ecr-repository-url:latest
