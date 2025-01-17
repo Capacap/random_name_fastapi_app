@@ -18,12 +18,12 @@ jobs:
         uses: docker/setup-buildx-action@v1
 
       - name: Build Docker Image
-        run: docker build -t my-fastapi-app .
+        run: docker build -t random_name_gen_fastapi .
 
       - name: Push Docker Image to AWS ECR
         run: |
           aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-ecr-repository-url
-          docker tag my-fastapi-app:latest your-ecr-repository-url:latest
+          docker tag random_name_gen_fastapi:latest your-ecr-repository-url:latest
           docker push your-ecr-repository-url:latest
 
       - name: SSH into EC2 and Deploy
