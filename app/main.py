@@ -123,7 +123,7 @@ def get_random_female_names(country: str, count: int) -> Dict[str, List[str]]:
         raise HTTPException(status_code=400, detail="Invalid country name. Please provide a valid country name.")
     if count <= 0:
         raise HTTPException(status_code=400, detail="Count must be a positive integer.")
-    if count > df[df[country] != 0].shape[0]]:
+    if count > df[df[country] != 0].shape[0]:
         raise HTTPException(status_code=400, detail="Count exceeds the number of available names. Please provide a smaller count.")
 
     random_female_names = ng.get_random_female_names(df, country, count)
