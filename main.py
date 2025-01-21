@@ -1,7 +1,7 @@
 import time
 import uvicorn
 import logging
-import app.namegen as ng
+import namegen as ng
 from fastapi import FastAPI, Request, HTTPException, Response
 from typing import Dict, List
 

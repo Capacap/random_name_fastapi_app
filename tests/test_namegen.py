@@ -1,5 +1,5 @@
 import unittest
-import app.namegen as ng
+import namegen as ng
 
 class TestNameGen(unittest.TestCase):
 

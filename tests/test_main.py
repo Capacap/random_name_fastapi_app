@@ -1,5 +1,5 @@
-import app.namegen as ng
-import app.main as main
+import namegen as ng
+import main
 from fastapi.testclient import TestClient
 
 client = TestClient(main.app)
